@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="GoDeferred" title="go-deferred" version_string="1.0.0" version_id="1000000" url="https://github.com/xfrocks/go-deferred" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="file_health_check" execute_order="10" callback_class="GoDeferred_Listener" callback_method="file_health_check" active="1" hint="" description=""/>
+    <listener event_id="load_class_model" execute_order="10" callback_class="GoDeferred_Listener" callback_method="load_class_XenForo_Model_DataRegistry" active="1" hint="XenForo_Model_DataRegistry" description="XenForo_Model_DataRegistry"/>
+  </code_event_listeners>
+  <cron>
+    <entry entry_id="GoDeferred_healthCheck" cron_class="GoDeferred_CronEntry_HealthCheck" cron_method="ping" active="1"><![CDATA[{"day_type":"dom","dom":["-1"],"hours":["-1"],"minutes":["26"]}]]></entry>
+  </cron>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups>
+    <group group_id="GoDeferred" display_order="9999" debug_only="0"/>
+    <option option_id="GoDeferred_healthCheck" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value></default_value>
+      <edit_format_params>placeholder=https://healthcheck.domain.com/abc-123</edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="GoDeferred" display_order="100"/>
+    </option>
+    <option option_id="GoDeferred_url" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value></default_value>
+      <edit_format_params>placeholder=http://defermon.domain.com/queue?target=https://domain.com/deferred.php&amp;hash=xxx</edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="GoDeferred" display_order="10"/>
+    </option>
+  </optiongroups>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="cron_entry_GoDeferred_healthCheck" version_id="1000000" version_string="1.0.0"><![CDATA[go-deferred: health check]]></phrase>
+    <phrase title="option_GoDeferred_healthCheck" version_id="1000000" version_string="1.0.0"><![CDATA[Health check]]></phrase>
+    <phrase title="option_GoDeferred_healthCheck_explain" version_id="1000000" version_string="1.0.0"><![CDATA[Enter the URL to ping as health checks. It will be scheduled to run every hour via XenForo cron system.]]></phrase>
+    <phrase title="option_GoDeferred_url" version_id="1000000" version_string="1.0.0"><![CDATA[URL to notify defermon]]></phrase>
+    <phrase title="option_GoDeferred_url_explain" version_id="1000000" version_string="1.0.0"><![CDATA[Enter the URL to send request to when deferred.php is scheduled to run. Please include <span style="font-family: monospace">`target`</span> and <span style="font-family: monospace">`hash`</span> parameters. The add-on will take care of the <span style="font-family: monospace">`delay`</span> parameter.]]></phrase>
+    <phrase title="option_group_GoDeferred" version_id="1000000" version_string="1.0.0"><![CDATA[go-deferred]]></phrase>
+    <phrase title="option_group_GoDeferred_description" version_id="1000000" version_string="1.0.0"><![CDATA[https://github.com/xfrocks/go-deferred]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates/>
+  <public_template_modifications/>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
