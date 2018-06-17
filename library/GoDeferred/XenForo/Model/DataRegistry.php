@@ -41,15 +41,15 @@ class GoDeferred_XenForo_Model_DataRegistry extends XFCP_GoDeferred_XenForo_Mode
         $urlWithDelay = sprintf('%s&delay=%d', $url, $delay);
         $result = GoDeferred_Helper_Http::get($urlWithDelay);
 
-        if (XenForo_Application::debugMode()) {
-            XenForo_Helper_File::log(__CLASS__, sprintf('%s -> %d', $urlWithDelay, $result));
-        }
-
         $queued = $result === 202;
         if ($queued) {
             $this->_GoDeferred_queuedTimestamp = $timestamp;
         }
 
-        return $queued;
+        if (XenForo_Application::debugMode() || !$queued) {
+            XenForo_Helper_File::log(__CLASS__, sprintf('%s -> %d', $urlWithDelay, $result));
+        }
+
+        return true;
     }
 }
