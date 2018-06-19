@@ -10,10 +10,6 @@ class GoDeferred_CronEntry_HealthCheck
             return;
         }
 
-        $result = GoDeferred_Helper_Http::get($url);
-
-        if (XenForo_Application::debugMode()) {
-            XenForo_Helper_File::log(__CLASS__, sprintf('%s -> %d', $url, $result));
-        }
+        XenForo_Application::defer('GoDeferred_Deferred_HealthCheck', ['url' => $url]);
     }
 }
