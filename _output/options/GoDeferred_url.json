@@ -1,0 +1,12 @@
+{
+    "edit_format": "textbox",
+    "edit_format_params": "type=url\nplaceholder=http://defermon.domain.com/queue?target=https://domain.com/deferred.php&amp;hash=xxx",
+    "data_type": "string",
+    "sub_options": [],
+    "validation_class": "",
+    "validation_method": "",
+    "default_value": "",
+    "relations": {
+        "GoDeferred": 10
+    }
+}

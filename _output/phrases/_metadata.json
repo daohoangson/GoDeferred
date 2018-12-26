@@ -1,0 +1,26 @@
+{
+    "option.GoDeferred_url.txt": {
+        "global_cache": false,
+        "version_id": 2000011,
+        "version_string": "2.0.0 Alpha 1",
+        "hash": "8e741fcc5afe256d8b0558f4d4941e02"
+    },
+    "option_explain.GoDeferred_url.txt": {
+        "global_cache": false,
+        "version_id": 2000011,
+        "version_string": "2.0.0 Alpha 1",
+        "hash": "a198cca097cefcab5295c1fbb238af9d"
+    },
+    "option_group.GoDeferred.txt": {
+        "global_cache": false,
+        "version_id": 2000011,
+        "version_string": "2.0.0 Alpha 1",
+        "hash": "5d29c88add26412e5a15438040281baa"
+    },
+    "option_group_description.GoDeferred.txt": {
+        "global_cache": false,
+        "version_id": 2000011,
+        "version_string": "2.0.0 Alpha 1",
+        "hash": "d41d8cd98f00b204e9800998ecf8427e"
+    }
+}

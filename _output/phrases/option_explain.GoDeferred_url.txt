@@ -1,0 +1,1 @@
+Enter the URL to send request to when deferred.php is scheduled to run. Please include <span style="font-family: monospace">`target`</span> and <span style="font-family: monospace">`hash`</span> parameters. The add-on will take care of the <span style="font-family: monospace">`delay`</span> parameter.
