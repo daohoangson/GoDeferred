@@ -40,6 +40,6 @@ class GoDeferred_Listener
             return;
         }
 
-        XenForo_Application::set('deferredRun', 0);
+        XenForo_Application::$autoDeferredIds = [];
     }
 }
